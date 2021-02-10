@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ACS</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- for less/css -->
+        <link rel="stylesheet/less" type="text/css" href="less/main.less" />
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,900&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container-fluid no-pd">
+            <div class="header">
+                <div class="container">
+                    <span class="logo"><img src="images/logo.svg" class="img-fluid" /></span>
+                    <span class="poweredby"><img src="images/yap.svg" class="img-fluid" /></span>
+                </div>
+            </div>
+            <div class="conatent-sec">
+                <div class="container">
+                    <div class="tlt-sec">
+                        <p>Complete payment</p>
+                        <p>Cancel Transaction</p>
+                    </div>
+                    <div class="charge-sec">
+                        <div class="amt-sec">
+                            <label>Total charges</label>
+                            <p>6000.00 <span>INR</span></p>
+                        </div>
+                        <div class="amt-dlt-sec ">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th>Merchant Name</th>
+                                        <td>FSSS shopping Private limited</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Purchasing Date</th>
+                                        <td>November 08, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Card Number</th>
+                                        <td>XXXX XXXX XXXX 0001</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <span class="tmer">Page will expire in 02:40 minutes</span>
+                </div>
+            </div>
+            <div class="otp-sec">
+                <div class="container">
+                    <!-- tabs -->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="otp-tab" data-toggle="tab" href="#otp" role="tab"
+                                aria-controls="otp" aria-selected="true">OTP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="atmpin-tab" data-toggle="tab" href="#atmpin" role="tab"
+                                aria-controls="atmpin" aria-selected="false">ATM PIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="password-tab" data-toggle="tab" href="#pass" role="tab"
+                                aria-controls="pass" aria-selected="false">PASSWORD</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="otp" role="tabpanel" aria-labelledby="otp-tab">
+                            <p class="otp-txt">OTP for this transaction sent to your registered mobile number
+                                (*******098).<br /> Please enter in below field to complete payment.</p>
+                            <div class="otpbxs">
+                                <div class="atmitems">
+                                    <form>
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                    </form>
+                                </div>
+                                <span class="rsned-otp">
+                                    <div class="otp-inn">
+                                        <span class="seemlessspay">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="seemless">
+                                                <label class="form-check-label" for="seemless"> seemless pay </label>
+                                            </div>
+                                        </span>
+                                        <span class="resendotp">Resend OTP</span>
+                                    </div>
+                                </span>
+                                <button class="btn btn-submit">Verify & Proceed</button>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="atmpin" role="tabpanel" aria-labelledby="atmpin-tab">
+                            <p class="otp-txt">Enter your ATM PIN and Expiry Month & Year</p>
+                            <div class="atmpinbx otpbxs">
+                                <div class="atmitems">
+                                    <label>ATM PIN</label>
+                                    <form>
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                    </form>
+                                </div>
+                                <div class="atmitems">
+                                    <div class="dtsec">
+                                        <label>Expiry Month</label>
+                                        <form>
+                                            <input type="text" class="form-control" placeholder="Month">
+                                        </form>
+                                    </div>
+                                    <div class="dtsec">
+                                        <label>Expiry Year</label>
+                                        <form>
+                                            <input type="text" class="form-control" placeholder="Year">
+                                        </form>
+                                    </div>
+                                </div>
+                                <button class="btn btn-submit">Verify & Proceed</button>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pass" role="tabpanel" aria-labelledby="password-tab">
+                            <p class="otp-txt">Set Password</p>
+                            <div class="otpbxs pass-sec">
+                                <div class="atmitems otpitms">
+                                    <label>Enter OTP</label>
+                                    <form>
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control">
+                                    </form>
+                                </div>
+                                <span class="rsned-otp" style="margin-bottom: 15px;">
+                                    <div class="otp-inn">
+                                        <span class="seemlessspay" style="visibility: hidden;">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="seemless">
+                                                <label class="form-check-label" for="seemless"> seemless pay </label>
+                                            </div>
+                                        </span>
+                                        <span class="resendotp">Resend OTP</span>
+                                    </div>
+                                </span>
+                                <div class="atmitems">
+                                    <div class="dtsec">
+                                        <label>Expiry Month</label>
+                                        <form>
+                                            <input type="text" class="form-control" placeholder="Month">
+                                        </form>
+                                    </div>
+                                    <div class="dtsec">
+                                        <label>Expiry Year</label>
+                                        <form>
+                                            <input type="text" class="form-control" placeholder="Year">
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="atmitems">
+                                    <div class="passsec">
+                                        <label>Create Password</label>
+                                        <form>
+                                            <input type="text" class="form-control" placeholder="Enter Password">
+                                        </form>
+                                    </div>
+                                    <div class="passsec">
+                                        <label>Confirm Password</label>
+                                        <form>
+                                            <input type="text" class="form-control" placeholder="Confirm your password">
+                                        </form>
+                                    </div>
+                                </div>
+                                <button class="btn btn-submit">Verify & Proceed</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- tabs -->
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <span><img src="images/linq.svg" /></span>
+                <span><img src="images/visa.svg" /></span>
+                <span>Copyright © All Rights Reserved</span>
+            </div>
+        </div>
+        <!-- popup -->
+        <div class="overlay">
+            <div class="popup">
+                <div class="pop-tlt">Opt in for seamless pay</div>
+                <div class="pop-cont">
+                    <div class="rdiochk">
+                        <div class="form-check rdio">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="forslect" checked>
+                            <label class="form-check-label" for="forslect"> Select Date </label>
+                        </div>
+                        <div class="form-check rdio">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="nooftrans">
+                            <label class="form-check-label" for="nooftrans"> No. of Transaction </label>
+                        </div>
+                    </div>
+                    <div class="rdiocont">
+                        <div class="fordate">
+                            <form>
+                                <div class="form-group">
+                                    <label>Today</label>
+                                    <input type="date" class="form-control" id="today" name="radio" disabled />
+                                </div>
+                                <div class="form-group">
+                                    <label style="visibility: hidden;">.</label>
+                                    <input type="date" class="form-control" name="radio" id="forslectdate" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="fortrans">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">No. of transaction</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <span class="dne">Done</span>
+            </div>
+        </div>
+        <!-- less js -->
+        <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
+        <script src="main.js"></script>
+    </body>
+
+</html>
