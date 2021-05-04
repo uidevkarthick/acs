@@ -23,7 +23,7 @@
             <div class="header">
                 <div class="container">
                     <span class="logo"><img src="images/logo.svg" class="img-fluid" /></span>
-                    <span class="poweredby"><img src="images/yap.svg" class="img-fluid" /></span>
+                    <span class="poweredby"><img src="images/visaa.svg" class="img-fluid" /></span>
                 </div>
             </div>
             <div class="conatent-sec">
@@ -34,29 +34,14 @@
                     </div>
                     <div class="charge-sec">
                         <div class="amt-sec">
-                            <label>Total charges</label>
-                            <p>6000.00 <span>INR</span></p>
+                            <p class="merchat-name">FSS shopping Private Limited</p>
+                            <p class="paying"><span>Paying </span>₹ 6000<span></span></p>
                         </div>
-                        <div class="amt-dlt-sec ">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th>Merchant Name</th>
-                                        <td>FSSS shopping Private limited</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Purchasing Date</th>
-                                        <td>November 08, 2020</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Card Number</th>
-                                        <td>XXXX XXXX XXXX 0001</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="amt-dlt-sec">
+                            <p>Card XXXX XXXX XXXX 0001</p>
+                            <p>November 08, 2020</p>
                         </div>
                     </div>
-                    <span class="tmer">Page will expire in 02:40 minutes</span>
                 </div>
             </div>
             <div class="otp-sec">
@@ -79,137 +64,154 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="otp" role="tabpanel" aria-labelledby="otp-tab">
                             <p class="otp-txt">OTP for this transaction sent to your registered mobile number
-                                (*******098).<br /> Please enter in below field to complete payment.</p>
+                                (*******098).</p>
                             <div class="otpbxs">
                                 <div class="atmitems">
                                     <form>
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" placeholder="Enter OTP" id="otpbox"
+                                            maxlength="6" required
+                                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')"
+                                            autofocus />
+                                        <span class="err-msg">Invalid OTP</span>
                                     </form>
+                                    <span class=" rsned-otp">
+                                        <div class="otp-inn">
+                                            <span class="seemlessspay">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="seemless">
+                                                    <label class="form-check-label" for="seemless"> seemless pay
+                                                    </label>
+                                                </div>
+                                            </span>
+                                            <span class="resendotp">Resend OTP</span>
+                                        </div>
+                                    </span>
+                                    <button class="btn btn-submit" id="otpverifybtn">Verify & Proceed</button>
                                 </div>
-                                <span class="rsned-otp">
-                                    <div class="otp-inn">
-                                        <span class="seemlessspay">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="seemless">
-                                                <label class="form-check-label" for="seemless"> seemless pay </label>
-                                            </div>
-                                        </span>
-                                        <span class="resendotp">Resend OTP</span>
-                                    </div>
-                                </span>
-                                <button class="btn btn-submit">Verify & Proceed</button>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="atmpin" role="tabpanel" aria-labelledby="atmpin-tab">
-                            <p class="otp-txt">Enter your ATM PIN and Expiry Month & Year</p>
+                            <p class="otp-txt">Enter your ATM PIN | Expiry Month & Year</p>
                             <div class="atmpinbx otpbxs">
                                 <div class="atmitems">
-                                    <label>ATM PIN</label>
-                                    <form>
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                    </form>
-                                </div>
-                                <div class="atmitems">
-                                    <div class="dtsec">
-                                        <label>Expiry Month</label>
+                                    <div class="atmpinsec">
                                         <form>
-                                            <input type="text" class="form-control" placeholder="Month">
+                                            <input type="text" class="form-control" placeholder="ATM PIN" id="atmpininp"
+                                                maxlength="4"
+                                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
+                                            <span class="err-msg">invaild ATM Pin</span>
                                         </form>
                                     </div>
-                                    <div class="dtsec">
-                                        <label>Expiry Year</label>
+                                    <div class="expsec">
                                         <form>
-                                            <input type="text" class="form-control" placeholder="Year">
+                                            <input type="text" class="form-control" id="expdate" placeholder="MM/YY">
+                                            <span class="err-msg">invaild Expiry Date</span>
                                         </form>
                                     </div>
+                                    <button class="btn btn-submit" id="atmverifibtn">Verify & Proceed</button>
                                 </div>
-                                <button class="btn btn-submit">Verify & Proceed</button>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pass" role="tabpanel" aria-labelledby="password-tab">
-                            <p class="otp-txt">Set Password</p>
-                            <div class="otpbxs pass-sec">
-                                <div class="atmitems otpitms">
-                                    <label>Enter OTP</label>
-                                    <form>
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                        <input type="text" class="form-control">
-                                    </form>
-                                </div>
-                                <span class="rsned-otp" style="margin-bottom: 15px;">
-                                    <div class="otp-inn">
-                                        <span class="seemlessspay" style="visibility: hidden;">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="seemless">
-                                                <label class="form-check-label" for="seemless"> seemless pay </label>
+                            <div class="setpasssec">
+                                <p class="otp-txt">Enter your OTP code here (*******098) & Set Password</p>
+                                <div class="otpbxs pass-sec">
+                                    <div class="atmitems otpitms">
+                                        <form>
+                                            <input type="text" class="form-control" placeholder="Enter OTP"
+                                                maxlength="6"
+                                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')"
+                                                required />
+                                        </form>
+                                        <span class="rsned-otp" style="margin-bottom: 15px;">
+                                            <div class="otp-inn">
+                                                <span class="resendotp">Resend OTP</span>
                                             </div>
                                         </span>
-                                        <span class="resendotp">Resend OTP</span>
                                     </div>
-                                </span>
-                                <div class="atmitems">
-                                    <div class="dtsec">
-                                        <label>Expiry Month</label>
-                                        <form>
-                                            <input type="text" class="form-control" placeholder="Month">
-                                        </form>
+                                    <div class="atmitems">
+                                        <div class="dtsec">
+                                            <form>
+                                                <input type="text" class="form-control" placeholder="ATM PIN"
+                                                    maxlength="4"
+                                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')"
+                                                    required />
+                                            </form>
+                                        </div>
+                                        <div class="dtsec">
+                                            <form>
+                                                <input type="text" class="form-control" placeholder="MM/YY"
+                                                    id="expdatesec" required />
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class="dtsec">
-                                        <label>Expiry Year</label>
-                                        <form>
-                                            <input type="text" class="form-control" placeholder="Year">
-                                        </form>
+                                    <div class="atmitems">
+                                        <div class="passsec">
+                                            <form>
+                                                <input type="text" class="form-control" placeholder="Enter Password"
+                                                    id="entnewpassword" required />
+                                            </form>
+                                        </div>
+                                        <div class="passsec">
+                                            <form>
+                                                <input type="text" class="form-control" id="entconfpassword"
+                                                    placeholder="Confirm your password" required />
+                                            </form>
+                                        </div>
                                     </div>
+                                    <button class="btn btn-submit" id="restsetpassword">Set Password</button>
                                 </div>
-                                <div class="atmitems">
-                                    <div class="passsec">
-                                        <label>Create Password</label>
+                            </div>
+                            <div class="entpasssec">
+                                <p class="otp-txt">Enter Password</p>
+                                <div class="otpbxs pass-sec">
+                                    <div class="atmitems otpitms">
                                         <form>
-                                            <input type="text" class="form-control" placeholder="Enter Password">
+                                            <input type="password" class="form-control" id="entpassword"
+                                                placeholder="* * * * * * * * *">
                                         </form>
+                                        <span class="rsned-otp" style="margin-bottom: 15px;">
+                                            <div class="otp-inn">
+                                                <span class="resendotp" id="resetpassword">Reset Password</span>
+                                            </div>
+                                        </span>
                                     </div>
-                                    <div class="passsec">
-                                        <label>Confirm Password</label>
-                                        <form>
-                                            <input type="text" class="form-control" placeholder="Confirm your password">
-                                        </form>
-                                    </div>
+                                    <button class="btn btn-submit" id="enteredverifipass">Verify & Proceed</button>
                                 </div>
-                                <button class="btn btn-submit">Verify & Proceed</button>
+                            </div>
+                            <div class="newpasssec">
+                                <div class="otpbxs pass-sec">
+                                    <div class="atmitems otpitms">
+                                        <p class="passtxt">Please Set Your Static Password.<br />Click to go</p>
+                                    </div>
+                                    <button class="btn btn-submit">Set Password</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- tabs -->
+                    <span class="tmer">Page will expire in <span id="minutes2"></span>:<span id="seconds2"></span>
+                        minutes</span>
                 </div>
             </div>
         </div>
         <div class="footer">
             <div class="container">
-                <span><img src="images/linq.svg" /></span>
-                <span><img src="images/visa.svg" /></span>
-                <span>Copyright © All Rights Reserved</span>
+                <span><img src="images/powerdby.png" /></span>
+                <span><img src="images/pci.svg" /></span>
             </div>
         </div>
         <!-- popup -->
         <div class="overlay">
             <div class="popup">
-                <div class="pop-tlt">Opt in for seamless pay</div>
+                <div class="pop-tlt opt-tlt">Opt in for seamless pay <span></span></div>
                 <div class="pop-cont">
+                    <p class="slct-txt">Tired of reading the words “Lorem Ipsum” time and time again? Don’t worry.</p>
+                    <p class="s-txt">Select one</p>
                     <div class="rdiochk">
                         <div class="form-check rdio">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="forslect" checked>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="forslect">
                             <label class="form-check-label" for="forslect"> Select Date </label>
                         </div>
                         <div class="form-check rdio">
@@ -246,12 +248,13 @@
                         </div>
                     </div>
                 </div>
-                <span class="dne">Done</span>
+                <span class="dne">Save</span>
             </div>
         </div>
         <!-- less js -->
         <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
         <script src="main.js"></script>
+        <script src="less/cleave.min.js"></script>
     </body>
 
 </html>

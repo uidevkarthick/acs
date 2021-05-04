@@ -19,21 +19,25 @@ body {
 }
 
 .container {
-  width: 692px;
+  width: 850px;
 }
 
 @media only screen and (max-width: 600px) {
   .container {
-    width: 100%;
+    width: 90%;
   }
+}
+
+@media only screen and (max-width: 390px) {
+  width: 100%;
 }
 
 .header {
   float: left;
   width: 100%;
   padding: 15px;
-  box-shadow: 0px 1.89759px 7.59036px rgba(0, 0, 0, 0.12);
-  margin-bottom: 30px;
+  box-shadow: 0px 12px 40px rgba(1, 112, 253, 0.05);
+  margin-bottom: 20px;
 
   @media only screen and (max-width: 600px) {
     height: 37px;
@@ -41,12 +45,18 @@ body {
 
     .container {
       height: 100%;
-      width: 100%;
+      width: 90%;
       padding: 0;
     }
 
     img {
       width: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 390px) {
+    .container {
+      width: 100%;
     }
   }
 
@@ -80,9 +90,10 @@ body {
       font-weight: normal;
       line-height: 24px;
       float: left;
+      margin-bottom: 10px;
 
       &:first-child {
-        font-size: 20px;
+        font-size: 16px;
         color: @txt-color;
         @media only screen and (max-width: 600px) {
           font-size: 10px;
@@ -91,8 +102,21 @@ body {
       }
       &:last-child {
         float: right;
-        font-size: 16px;
+        font-size: 14px;
         color: @theme-color;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          background: url("../images/cancel.svg") no-repeat center;
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          position: relative;
+          top: 4px;
+          left: -3px;
+          background-size: contain;
+        }
         @media only screen and (max-width: 600px) {
           font-size: 8px;
           margin-bottom: 0;
@@ -103,32 +127,120 @@ body {
 }
 
 .charge-sec {
-  margin-top: 30px;
+  margin-top: 15px;
   width: 100%;
   float: left;
-  border-bottom: 1px solid @border-color;
 
-  @media only screen and (max-width: 600px) {
-    margin-top: 10px;
+  border-radius: 50.5251px;
+  padding: 15px;
+  position: relative;
+
+  &::after {
+    content: "";
+    background: url("../images/inner-screenview.svg") no-repeat center;
+    width: 40%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    right: -3%;
+    top: 0;
+    background-size: contain;
+    @media only screen and (max-width: 600px) {
+      right: 0%;
+    }
+    @media only screen and (max-width: 390px) {
+      right: 0%;
+      width: 50%;
+    }
   }
 
-  label {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    line-height: 18px;
-    text-align: center;
-    letter-spacing: 0.446296px;
-    text-transform: uppercase;
-    color: @sub-txt-color;
+  @media only screen and (max-width: 600px) {
+    margin-top: 0px;
+    padding: 15px 50px;
+  }
+  @media only screen and (max-width: 390px) {
+    margin-top: 0px;
+    padding: 15px 5px;
+  }
+
+  .amt-sec {
+    float: left;
+    width: 100%;
+    position: relative;
+
+    &::after {
+      content: "";
+      background: #f2f2f2;
+      width: 50%;
+      height: 0.5px;
+      display: inline-block;
+      position: relative;
+      top: -10px;
+
+      @media only screen and (max-width: 600px) {
+        top: -16px;
+      }
+    }
+  }
+
+  .merchat-name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 150%;
+    color: #373844;
     @media only screen and (max-width: 600px) {
-      font-size: 7px;
-      margin-bottom: 4px;
+      font-size: 10px;
+      margin-bottom: 0;
+    }
+    @media only screen and (max-width: 390px) {
+      font-size: 8px;
+      margin-bottom: 0;
+    }
+  }
+  .paying {
+    float: left;
+    width: 100%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 28px;
+    color: #2bbc5d;
+    margin-top: 0px;
+    @media only screen and (max-width: 600px) {
+      font-size: 10px;
+      margin-bottom: 0;
+      line-height: 2.3;
+    }
+    @media only screen and (max-width: 390px) {
+      font-size: 8px;
+      margin-bottom: 0;
+    }
+    span {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 21px;
+      color: #737a8d;
+      float: left;
+      margin-right: 15px;
+      position: relative;
+      top: 2px;
+      @media only screen and (max-width: 600px) {
+        font-size: 9px;
+        margin-right: 7px;
+        top: 1px;
+      }
+      @media only screen and (max-width: 390px) {
+        font-size: 7px;
+        margin-bottom: 0;
+        line-height: 2;
+      }
     }
   }
 
   p {
-    text-align: center;
+    text-align: left;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -156,50 +268,28 @@ body {
 .amt-dlt-sec {
   float: left;
   width: 100%;
-  display: flex;
-  justify-content: center;
 
-  .table {
+  @media only screen and (max-width: 600px) {
+    position: relative;
+    top: -15px;
+  }
+
+  p {
     float: left;
     width: 100%;
-    border: none !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 21px;
+    color: #737a8d;
+    margin-bottom: 5px;
     @media only screen and (max-width: 600px) {
-      width: 100%;
-      margin-bottom: 10px;
+      font-size: 10px;
+      margin-bottom: 0;
+      line-height: 1.5;
     }
-
-    th {
-      color: @sub-txt-color;
-      font-weight: normal;
-      font-size: 15.6204px;
-      line-height: 18px;
-      border: none !important;
-      width: 50%;
-      padding-right: 40px;
-      text-align: right;
-      @media only screen and (max-width: 600px) {
-        font-size: 6px;
-        line-height: 8px;
-        padding-bottom: 4px;
-        padding-top: 4px;
-        padding-right: 20px;
-      }
-    }
-    td {
-      color: @txt-color;
-      font-weight: normal;
-      font-size: 15.6204px;
-      line-height: 18px;
-      border: none !important;
-      width: 50%;
-      padding-left: 40px;
-      @media only screen and (max-width: 600px) {
-        font-size: 6px;
-        line-height: 8px;
-        padding-bottom: 4px;
-        padding-top: 4px;
-        padding-left: 10px;
-      }
+    @media only screen and (max-width: 600px) {
+      font-size: 8px;
     }
   }
 }
@@ -226,12 +316,12 @@ body {
   float: left;
   width: 100%;
   padding: 30px 0 30px 0;
-  box-shadow: 0px -8.4px 14.4px rgba(21, 21, 21, 0.06);
   border-radius: 14.4px;
 
   @media only screen and (max-width: 600px) {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
   }
 
   .otp-txt {
@@ -245,9 +335,9 @@ body {
     opacity: 0.6;
 
     @media only screen and (max-width: 600px) {
-      font-size: 6px;
+      font-size: 8px;
       line-height: 10px;
-      margin-bottom: 5px;
+      margin-bottom: 0px;
     }
   }
 }
@@ -276,7 +366,7 @@ body {
   }
 
   .atmitems {
-    width: 60%;
+    width: 50%;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -318,6 +408,7 @@ body {
     margin: auto;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 
     @media only screen and (max-width: 600px) {
       width: 100%;
@@ -327,18 +418,18 @@ body {
 
   input {
     float: left;
-    width: 53.56px;
+    width: 100%;
     box-shadow: none !important;
-    height: 53.56px;
+    height: 54px;
     border: 1.11574px solid #e1e7f3;
-    text-align: center;
+    text-align: left;
 
     @media only screen and (max-width: 600px) {
-      width: 24px;
+      width: 100%;
       height: 24px;
       border-radius: 2px;
-      font-size: 9px;
-      padding: 0;
+      font-size: 8px;
+      padding: 0 8px;
       margin: 0 3px;
     }
   }
@@ -346,7 +437,7 @@ body {
   .rsned-otp {
     width: 100%;
     float: left;
-    margin-top: 0px;
+    margin-top: 24px;
 
     @media only screen and (max-width: 600px) {
       margin-top: 0;
@@ -355,7 +446,7 @@ body {
     }
 
     .otp-inn {
-      width: 60%;
+      width: 100%;
       float: none;
       margin: auto;
       display: flex;
@@ -378,6 +469,11 @@ body {
         width: 50%;
       }
 
+      .form-check {
+        float: left;
+        width: 100%;
+      }
+
       input {
         width: auto;
         height: auto;
@@ -395,24 +491,26 @@ body {
       }
       label {
         text-transform: uppercase;
+        position: relative;
+        top: 3px;
         @media only screen and (max-width: 600px) {
           font-size: 6px;
           float: left;
           margin-bottom: 0;
+          top: 0;
         }
       }
     }
 
     .resendotp {
       text-align: center;
-      color: #0170fd;
+      color: #3580ff;
       float: left;
       margin-left: 0%;
 
       font-weight: normal;
       font-size: 13.3889px;
       line-height: 16px;
-      text-transform: uppercase;
       text-decoration-line: underline;
 
       @media only screen and (max-width: 600px) {
@@ -456,8 +554,6 @@ body {
   width: 100%;
   background: @theme-color;
   color: #fff !important;
-  width: 60%;
-  margin-left: 20%;
   border-radius: 9px;
   height: 48px;
   margin-top: 38px;
@@ -468,7 +564,7 @@ body {
     line-height: 12px;
     padding: 5px 30px;
     border-radius: 4px;
-    width: auto;
+    width: 100%;
     height: auto;
     margin-left: 0;
     margin-top: 10px;
@@ -480,26 +576,27 @@ body {
   width: 100%;
   background: @footer-color;
   padding: 12px;
-  position: relative;
+  position: fixed;
   bottom: 0;
+  left: 0;
 
   @media only screen and (max-width: 600px) {
     height: 24px;
   }
 
   .container {
-    width: 32%;
+    width: 48%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     @media only screen and (max-width: 600px) {
-      width: 40%;
+      width: 100%;
       height: 100%;
     }
 
     @media only screen and (min-width: 400px) and (max-width: 500px) {
-      width: 55%;
+      width: 80%;
     }
     @media only screen and (min-width: 250px) and (max-width: 300px) {
       width: 90%;
@@ -509,7 +606,7 @@ body {
       @media only screen and (max-width: 600px) {
         width: 100%;
         img {
-          width: 60%;
+          width: 4em;
         }
       }
 
@@ -518,10 +615,15 @@ body {
         font-size: 6.66667px;
         line-height: 8px;
         color: @txt-color;
+        text-align: right;
 
         @media only screen and (max-width: 600px) {
           font-size: 4px;
           line-height: 5px;
+
+          img {
+            width: 9em;
+          }
         }
       }
     }
@@ -533,7 +635,7 @@ body {
   width: 100%;
 
   .container {
-    width: 692px;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -546,13 +648,13 @@ body {
 
   .pro-icn {
     float: left;
-    margin-top: 80px;
+    margin-top: 20px;
 
     @media only screen and (max-width: 600px) {
-      margin-top: 30px;
+      margin-top: 10px;
       text-align: center;
       img {
-        width: 40%;
+        width: 90%;
       }
     }
   }
@@ -564,13 +666,23 @@ body {
     color: @txt-color;
     text-align: center;
     margin-top: 24px;
+    float: left;
+    width: 100%;
+    position: relative;
+    top: -5em;
     @media only screen and (max-width: 600px) {
       font-weight: normal;
       font-size: 12px;
       line-height: 16px;
+      top: -8em;
+    }
+    @media only screen and (max-width: 390px) {
+      top: -3em;
+      font-size: 9px;
     }
     @media only screen and (min-width: 250px) and (max-width: 300px) {
       font-size: 9px;
+      top: 0em;
     }
   }
 }
@@ -610,13 +722,19 @@ body {
 
     .dne {
       float: left;
-      width: 100%;
-      text-align: right;
+      width: 90%;
+      text-align: center;
       font-size: 14px;
-      color: #0170fd;
       padding: 15px 22px;
       position: relative;
-      margin: -30px 0 0 0;
+      margin: 0px 0 5% 5%;
+      background: #0193fd;
+      color: #fff !important;
+      border-radius: 9px;
+      height: 45px;
+      margin-top: 15px;
+      box-shadow: none !important;
+
       @media only screen and (max-width: 600px) {
         font-size: 8px;
         padding: 13px 10px;
@@ -639,10 +757,13 @@ body {
     .rdiochk {
       display: flex;
       justify-content: space-between;
+      float: left;
+      width: 100%;
     }
     .form-check {
       label {
         font-size: 14px;
+        color: #737a8d;
         @media only screen and (max-width: 600px) {
           font-size: 7px;
           float: left;
@@ -668,6 +789,7 @@ body {
         float: left;
         width: 100%;
         margin-top: 20px;
+        display: none;
         @media only screen and (max-width: 600px) {
           margin-top: 10px;
         }
@@ -688,6 +810,7 @@ body {
         .form-group {
           float: left;
           width: 48%;
+          margin-bottom: 0;
 
           input {
             font-size: 12px;
@@ -704,6 +827,7 @@ body {
     .fortrans {
       display: none;
       margin-top: 20px;
+      display: none;
       label {
         font-size: 12px;
         float: left;
@@ -711,6 +835,10 @@ body {
         @media only screen and (max-width: 600px) {
           font-size: 7px;
         }
+      }
+
+      .form-group {
+        margin-bottom: 0;
       }
 
       select {
@@ -728,13 +856,13 @@ body {
   width: 100%;
 
   .atmitems {
-    width: 40%;
+    width: 50%;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 20px;
 
     @media only screen and (max-width: 600px) {
-      width: 8em;
+      width: 12em;
     }
   }
 
@@ -773,6 +901,28 @@ body {
       float: right;
     }
   }
+
+  .atmpinsec {
+    float: left;
+    width: 45%;
+  }
+  .expsec {
+    float: right;
+    width: 45%;
+  }
+}
+
+.pass-sec {
+  float: none;
+  width: 50%;
+  margin: auto;
+  @media only screen and (max-width: 600px) {
+    width: 12em;
+  }
+
+  .atmitems {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -795,7 +945,8 @@ body {
     }
 
     .passsec {
-      margin-top: 12px;
+      margin-top: 0px;
+      margin-bottom: 5px;
     }
 
     .rsned-otp {
@@ -806,6 +957,7 @@ body {
     .atmitems {
       width: 100% !important;
       margin-top: 0;
+      margin-bottom: 5px !important;
 
       label {
         font-size: 7px;
@@ -829,4 +981,157 @@ body {
       width: 100% !important;
     }
   }
+}
+
+.setpasssec {
+  .otp-inn {
+    justify-content: flex-end !important;
+  }
+}
+.entpasssec {
+  display: none;
+  .otp-inn {
+    justify-content: flex-end !important;
+  }
+}
+.newpasssec {
+  display: none;
+  .passtxt {
+    float: left;
+    width: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+    color: #373844;
+    margin-top: 30px;
+    @media only screen and (max-width: 600px) {
+      font-size: 8px;
+    }
+  }
+}
+
+input::-webkit-input-placeholder {
+  color: #c01;
+  opacity: 0.5;
+}
+
+::placeholder {
+  color: #373844;
+  opacity: 0.5;
+}
+
+::placeholder {
+  color: #373844;
+  opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+  color: #373844;
+  opacity: 0.5;
+}
+
+::-ms-input-placeholder {
+  color: #373844;
+  opacity: 0.5;
+}
+
+.slct-txt {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: justify;
+  color: #737a8d;
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+p.s-txt {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 11px;
+  float: left;
+  width: 100%;
+  color: #373844;
+}
+
+.opt-tlt {
+  position: relative;
+
+  span {
+    background: url("../images/cancel-gray.svg");
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+  }
+}
+
+.foot-proceed-btn-sec {
+  position: absolute;
+  bottom: 8%;
+  left: 0;
+  right: 0;
+  button {
+    width: 40%;
+    margin-left: 30%;
+
+    @media only screen and (max-width: 600px) {
+      width: 90%;
+      margin-left: 5%;
+    }
+  }
+}
+
+.opt-sec {
+  float: left;
+  width: 40%;
+  padding: 20px;
+  border: 0px solid #ccc;
+  position: relative;
+  top: -5em;
+
+  .dtbx {
+    float: left;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+
+    &:nth-child(2) {
+      float: right;
+      text-align: right;
+    }
+  }
+
+  .btn-opt {
+    float: left;
+    width: 100%;
+    margin-top: 40px;
+    border: 0.7px solid #e1e7f3;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #3580ff;
+  }
+}
+
+.err-msg {
+  float: left;
+  width: 100%;
+  color: #c01;
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.seems-dec {
+  float: left;
+  width: 100%;
 }

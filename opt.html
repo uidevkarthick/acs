@@ -29,7 +29,7 @@
             <div class="conatent-sec">
                 <div class="container">
                     <div class="tlt-sec">
-                        <p>Complete payment</p>
+                        <p>Seamless Pay</p>
                         <p>Cancel Transaction</p>
                     </div>
                 </div>
@@ -38,16 +38,19 @@
                         <div class="pro-icn">
                             <img src="images/pro-bg.svg" class="img-fluid" />
                         </div>
-                        <span class="pro-txt">Processing Transaction...<br /> Please do not press back button or refresh
-                            page</span>
+                        <div class="opt-sec">
+                            <div class="dtbx">
+                                <label>Start Date</label>
+                                <span>01-01-2021</span>
+                            </div>
+                            <div class="dtbx">
+                                <label>Expiry Date</label>
+                                <span>30-01-2021</span>
+                            </div>
+                            <button class="btn btn-opt">OPT Out</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="foot-proceed-btn-sec">
-            <div class="container">
-                <button class="btn btn-submit">Switch back to OTP</button>
-                <span class="tmer">Page will expire in 02:40 minutes</span>
             </div>
         </div>
         <div class="footer">
@@ -56,9 +59,19 @@
                 <span><img src="images/pci.svg" /></span>
             </div>
         </div>
+        <div class="overlay opt-pop">
+            <div class="popup">
+                <div class="pop-tlt opt-tlt">Opt Out<span></span></div>
+                <div class="pop-cont">
+                    <p class="slct-txt">Are you sure you want to Opt out this transaction page? This action cannot be
+                        undone.</p>
+                </div>
+                <span class="dne">Confirm</span>
+            </div>
+        </div>
         <!-- less js -->
         <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
-        <script src="js/main.js"></script>
+        <script src="main.js"></script>
     </body>
 
 </html>
